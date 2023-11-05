@@ -3,6 +3,7 @@
 import React from "react";
 
 import Image from "next/image";
+import Link from "next/link";
 
 import SkillsList from "./components/SkillsList";
 import { skillList } from "./data";
@@ -11,30 +12,30 @@ import { Typewriter } from "react-simple-typewriter";
 export default function Home() {
   return (
     <>
-      <header className="sticky top-0 backdrop-blur bg-stone-950/75 border-opacity-10 border-b border-b-white">
+      <header className="sticky top-0 backdrop-blur transition-colors duration-300 bg-stone-950/75 border-opacity-10 border-b border-b-white">
         <nav>
-          <ol className="h-16 items-center flex justify-around text-2xl font-semibold">
+          <ol className="h-10 items-center flex justify-around text-xl font-semibold">
             <li className="transition duration-500 hover:text-stone-400">
-              <a href="#">Home</a>
+              <Link href="#">Home</Link>
             </li>
             <li className="transition duration-500 hover:text-stone-400">
-              <a href="#sobre-mim">Sobre Mim</a>
+              <Link href="#sobre-mim">Sobre Mim</Link>
             </li>
             <li className="transition duration-500 hover:text-stone-400">
-              <a href="#habilidades">Habilidades</a>
+              <Link href="#habilidades">Habilidades</Link>
             </li>
             <li className="transition duration-500 hover:text-stone-400">
-              <a href="#projetos">Projetos</a>
+              <Link href="#projetos">Projetos</Link>
             </li>
             <li className="transition duration-500 hover:text-stone-400">
-              <a href="#contato">Contato</a>
+              <Link href="#contato">Contato</Link>
             </li>
           </ol>
         </nav>
       </header>
 
-      <main className="bg-neutral-950">
-        <section className="h-[90vh]">
+      <main className="bg-neutral-950 border-opacity-10 border-b border-b-white">
+        <section className="h-[95vh]">
           <div className="flex justify-center items-center border-b-2 border-white/10 bg-repeat-round h-full bg-[url(/terra-bw-b.jpg)]">
             <h2 className="font-bold mt-40 text-5xl">
               <Typewriter words={["Criando um mundo de possibilidades..."]} />
@@ -42,10 +43,8 @@ export default function Home() {
           </div>
         </section>
 
-        <section className="my-2 p-2">
-          <h3 id="sobre-mim" className="text-2xl font-semibold">
-            Sobre Mim
-          </h3>
+        <section className="my-2 p-2 pt-16" id="sobre-mim">
+          <h3 className="text-2xl font-semibold">Sobre Mim</h3>
           <p className="p-3 text-stone-300">
             Olá, meu nome é <span className="font-semibold">Bruno Davi</span>.
             Sou um desenvolvedor autodidata, entusiasta de automação no Android.
@@ -59,18 +58,14 @@ export default function Home() {
           </p>
         </section>
 
-        <section className="my-2 p-2">
-          <h3 id="habilidades" className="mb-2 text-2xl font-semibold">
-            Habilidades
-          </h3>
+        <section className="my-2 p-2 pt-16" id="habilidades">
+          <h3 className="mb-2 text-2xl font-semibold">Habilidades</h3>
 
           <SkillsList skillList={skillList} />
         </section>
 
-        <section className="my-2 p-2">
-          <h3 id="projetos" className="text-2xl font-semibold">
-            Projetos
-          </h3>
+        <section className="my-2 p-2 pt-16" id="projetos">
+          <h3 className="text-2xl font-semibold">Projetos</h3>
 
           <p className="p-5">
             A maioria dos projetos que faço seriam para ajudar no
@@ -80,9 +75,12 @@ export default function Home() {
           <ol className="p-3 text-stone-300">
             <li className="px-5">
               <h4 className="font-semibold hover:underline inline">
-                <a target="_blank" href="https://github.com/brunodavi/envclass">
+                <Link
+                  target="_blank"
+                  href="https://github.com/brunodavi/envclass"
+                >
                   EnvClass
-                </a>
+                </Link>
               </h4>
 
               <div className="px-5 mt-3">
@@ -104,12 +102,12 @@ export default function Home() {
             </li>
             <li className="px-5 my-3">
               <h4 className="font-semibold hover:underline inline">
-                <a
+                <Link
                   target="_blank"
                   href="https://github.com/brunodavi/tasker.py"
                 >
                   TaskerPy
-                </a>
+                </Link>
               </h4>
 
               <div className="px-5 mt-3">
@@ -125,21 +123,19 @@ export default function Home() {
           </ol>
         </section>
 
-        <section className="my-2 p-2">
-          <h3 id="contato" className="text-2xl font-semibold">
-            Contato
-          </h3>
+        <section className="my-2 p-2 pt-16" id="contato">
+          <h3 className="text-2xl font-semibold">Contato</h3>
 
-          <ol className="p-3 text-stone-300">
+          <ol className="flex flex-col justify-around h-36 p-3 text-stone-300">
             <li className="flex space-x-2">
               <Image src="/email.svg" width={24} height={24} alt="email" />
-              <a
+              <Link
                 href="mailto:brunodaviandrade2000@gmail.com"
                 className="font-semibold hover:underline"
                 target="_blank"
               >
                 brunodaviandrade2000@gmail.com
-              </a>
+              </Link>
             </li>
             <li className="flex space-x-2">
               <Image
@@ -148,13 +144,13 @@ export default function Home() {
                 height={20}
                 alt="whatsapp"
               />
-              <a
+              <Link
                 href="https://wa.me/5511987364471"
                 className="font-semibold hover:underline"
                 target="_blank"
               >
                 11 98736 4471
-              </a>
+              </Link>
             </li>
             <li className="flex space-x-2">
               <Image
@@ -164,13 +160,13 @@ export default function Home() {
                 height={20}
                 alt="github-icon"
               />
-              <a
+              <Link
                 className="font-semibold hover:underline"
                 href="https://github.com/brunodavi"
                 target="_blank"
               >
                 GitHub
-              </a>
+              </Link>
             </li>
             <li className="flex space-x-2">
               <Image
@@ -180,22 +176,22 @@ export default function Home() {
                 height={20}
                 alt="linkedin-icon"
               />
-              <a
+              <Link
                 className="font-semibold hover:underline"
                 href="https://linkedin.com/in/brunodavi"
                 target="_blank"
               >
                 Linkedin
-              </a>
+              </Link>
             </li>
           </ol>
         </section>
       </main>
 
       <footer className="flex flex-col justify-around items-center h-20">
-        <a href="#" className="hover:underline font-semibold">
+        <Link href="#" className="hover:underline font-semibold">
           Voltar para o topo
-        </a>
+        </Link>
         <p>Copyright &copy; 2023 Bruno Davi Andrade Dos Santos</p>
       </footer>
     </>

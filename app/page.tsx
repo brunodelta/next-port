@@ -1,6 +1,12 @@
+"use client";
+
+import React from "react";
+
 import Image from "next/image";
+
 import SkillsList from "./components/SkillsList";
 import { skillList } from "./data";
+import { Typewriter } from "react-simple-typewriter";
 
 export default function Home() {
   return (
@@ -28,38 +34,11 @@ export default function Home() {
       </header>
 
       <main className="bg-neutral-950">
-        <section>
-          <div className="flex flex-col justify-center items-center h-48 bg-[url(/cover.jpg)]">
-            <Image
-              className="rounded-full"
-              src="/profile.jpg"
-              alt="perfil"
-              width={96}
-              height={96}
-            />
-            <h2 className="font-bold text-lg">Desenvolvedor Full Stack</h2>
-
-            <div className="flex self-end justify-around w-20">
-              <a href="https://github.com/brunodavi" target="_blank">
-                <Image
-                  className="transition duration-300 hover:brightness-75"
-                  src="/github.svg"
-                  width={20}
-                  height={20}
-                  alt="github-icon"
-                />
-              </a>
-
-              <a href="https://linkedin.com/in/brunodavi" target="_blank">
-                <Image
-                  className="transition duration-300 hover:brightness-75"
-                  src="/linkedin.svg"
-                  width={20}
-                  height={20}
-                  alt="linkedin-icon"
-                />
-              </a>
-            </div>
+        <section className="h-[90vh]">
+          <div className="flex justify-center items-center border-b-2 border-white/10 bg-repeat-round h-full bg-[url(/terra-bw-b.jpg)]">
+            <h2 className="font-bold mt-40 text-5xl">
+              <Typewriter words={["Criando um mundo de possibilidades..."]} />
+            </h2>
           </div>
         </section>
 
@@ -101,7 +80,9 @@ export default function Home() {
           <ol className="p-3 text-stone-300">
             <li className="px-5">
               <h4 className="font-semibold hover:underline inline">
-                <a href="https://github.com/brunodavi/envclass">EnvClass</a>
+                <a target="_blank" href="https://github.com/brunodavi/envclass">
+                  EnvClass
+                </a>
               </h4>
 
               <div className="px-5 mt-3">
@@ -116,12 +97,31 @@ export default function Home() {
                 <br />
 
                 <p>
-                  Mesmo sendo um projeto pequeno, adicionei testes e
-                  integração continua, para garantir sua funcionalidade.
+                  Mesmo sendo um projeto pequeno, adicionei testes e integração
+                  continua, para garantir sua funcionalidade.
                 </p>
               </div>
             </li>
-            <li>TaskerPy</li>
+            <li className="px-5 my-3">
+              <h4 className="font-semibold hover:underline inline">
+                <a
+                  target="_blank"
+                  href="https://github.com/brunodavi/tasker.py"
+                >
+                  TaskerPy
+                </a>
+              </h4>
+
+              <div className="px-5 mt-3">
+                <p>
+                  Projeto que estou desenvolvendo para automatizar a criação de
+                  automações no Tasker, fazendo com que seja possível usar o
+                  computador para configurar as rotinas desse app pelo
+                  computador, tornando a mais rápido a criação de tarefas
+                  complexas com abstrações no python
+                </p>
+              </div>
+            </li>
           </ol>
         </section>
 
@@ -133,7 +133,13 @@ export default function Home() {
           <ol className="p-3 text-stone-300">
             <li className="flex space-x-2">
               <Image src="/email.svg" width={24} height={24} alt="email" />
-              <span>Email</span>
+              <a
+                href="mailto:brunodaviandrade2000@gmail.com"
+                className="font-semibold hover:underline"
+                target="_blank"
+              >
+                brunodaviandrade2000@gmail.com
+              </a>
             </li>
             <li className="flex space-x-2">
               <Image
@@ -142,7 +148,45 @@ export default function Home() {
                 height={20}
                 alt="whatsapp"
               />
-              <span>WhatsApp</span>
+              <a
+                href="https://wa.me/5511987364471"
+                className="font-semibold hover:underline"
+                target="_blank"
+              >
+                11 98736 4471
+              </a>
+            </li>
+            <li className="flex space-x-2">
+              <Image
+                className="transition duration-300 hover:brightness-75"
+                src="/github.svg"
+                width={20}
+                height={20}
+                alt="github-icon"
+              />
+              <a
+                className="font-semibold hover:underline"
+                href="https://github.com/brunodavi"
+                target="_blank"
+              >
+                GitHub
+              </a>
+            </li>
+            <li className="flex space-x-2">
+              <Image
+                className="transition duration-300 hover:brightness-75"
+                src="/linkedin.svg"
+                width={20}
+                height={20}
+                alt="linkedin-icon"
+              />
+              <a
+                className="font-semibold hover:underline"
+                href="https://linkedin.com/in/brunodavi"
+                target="_blank"
+              >
+                Linkedin
+              </a>
             </li>
           </ol>
         </section>
@@ -152,10 +196,7 @@ export default function Home() {
         <a href="#" className="hover:underline font-semibold">
           Voltar para o topo
         </a>
-        <p>
-          Copyright &copy; 2023 Bruno Davi Andrade Dos Santos. Todos os direitos
-          reservados.
-        </p>
+        <p>Copyright &copy; 2023 Bruno Davi Andrade Dos Santos</p>
       </footer>
     </>
   );

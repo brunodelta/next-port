@@ -14,9 +14,8 @@ export default function SkillsList({ skillList }: { skillList: Skill[] }) {
   return (
     <ol className="flex justify-around p-3 text-stone-300">
       {skillList.map(({ title, imageProperties }, index) => (
-        <li key={index} className="flex flex-col items-center">
+        <li key={index} className="flex flex-col items-center transition duration-300 hover:scale-125 cursor-pointer">
           <Image
-            className="transition duration-300 hover:scale-125 cursor-pointer"
             src={imageProperties.src}
             width={imageProperties?.width ?? 96}
             height={imageProperties?.height ?? 96}
